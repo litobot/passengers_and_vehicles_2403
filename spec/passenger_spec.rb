@@ -21,17 +21,23 @@ RSpec.describe Passenger do
     expect(taylor.age).to eq(12)
   end
   
-  # it 'is an adult' do
-  #   charlie = Passenger.new({"name" => "Charlie", "age" => 18})    
-  #   taylor = Passenger.new({"name" => "Taylor", "age" => 12}) 
+  it 'is an adult' do
+    charlie = Passenger.new({"name" => "Charlie", "age" => 18})    
+    taylor = Passenger.new({"name" => "Taylor", "age" => 12}) 
     
-  #   expect(charlie.adult?).to eq(false)
-  # end
+    # Charlie is an adult
+    # Taylor is not an adult
+    
+    expect(charlie.adult?).to eq(true)
+    expect(taylor.adult?).to eq(false)
+  end
+  
+  it 'changes the driver' do
 
-  # # => true
-
-  # pry(main)> taylor.adult?
-  # # => false
+  end
+  # Charlie is not the driver
+    # --> call medthod #charlie.drive
+      # Now Charlie can drive when #charlie.driver is called again
 
   # pry(main)> charlie.driver?
   # # => false
