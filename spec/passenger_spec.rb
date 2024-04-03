@@ -8,7 +8,6 @@ RSpec.describe Passenger do
   it 'can initialize' do
     passenger = Passenger.new({})
     expect(passenger).to be_an_instance_of(Passenger)
-
   end
 
   it 'has a name & an age' do
@@ -32,18 +31,19 @@ RSpec.describe Passenger do
     expect(taylor.adult?).to eq(false)
   end
   
-  it 'changes the driver' do
+  it 'changes who the driver is' do
+    charlie = Passenger.new({"name" => "Charlie", "age" => 18})    
+    taylor = Passenger.new({"name" => "Taylor", "age" => 12}) 
 
+    expect(charlie.driver?).to be(false)
+
+    charlie.drive # calls method that changes Charlie's driver status
+    expect(charlie.driver?).to be(true)
+
+    # Charlie is not the driver
+      # --> call medthod #charlie.drive
+        # Now Charlie can drive when #charlie.driver is called again
   end
-  # Charlie is not the driver
-    # --> call medthod #charlie.drive
-      # Now Charlie can drive when #charlie.driver is called again
 
-  # pry(main)> charlie.driver?
-  # # => false
-
-  # pry(main)> charlie.drive
-
-  # pry(main)> charlie.driver?
-  # # => true
+  
 end
